@@ -27,16 +27,19 @@ SECRET_KEY = \
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 # FIXED: Split long URL across multiple lines
+BASE_DOMAIN = (
+    'ngoniechizor-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.'
+    'proxy.cognitiveclass.ai'
+)
+
 ALLOWED_HOSTS = [
     'localhost',
-    'ngoniechizor-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+    BASE_DOMAIN
 ]
 
-# FIXED: Split long URL across multiple lines
 CSRF_TRUSTED_ORIGINS = [
-    'https://ngoniechizor-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+    f'https://{BASE_DOMAIN}'
 ]
 
 REST_FRAMEWORK = {
