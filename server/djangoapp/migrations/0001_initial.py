@@ -28,14 +28,13 @@ class Migration(migrations.Migration):
             name='CarModel',
             fields=[
                 ('id', models.BigAutoField(auto_created=True,
-                                           primary_key=True, serialize=False, 
+                                           primary_key=True, serialize=False,
                                            verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
-                ('type', models.CharField(choices=[('SEDAN', 'Sedan'), 
-                                                   ('SUV', 'SUV'), 
+                ('type', models.CharField(choices=[('SEDAN', 'Sedan'),
+                                                   ('SUV', 'SUV'),
                                                    ('WAGON', 'Wagon')],
-                                          default='SUV', max_length=10)
-                 ),
+                                          default='SUV', max_length=10)),
                 (
                     'year',
                     models.IntegerField(
@@ -46,7 +45,6 @@ class Migration(migrations.Migration):
                         ],
                     ),
                 ),
-
                 ('car_make', models.ForeignKey(
                     on_delete=django.db.models.deletion.CASCADE,
                     to='djangoapp.carmake')),
